@@ -1,0 +1,24 @@
+package com.Hello.re_grud.Intro
+
+import android.content.Intent
+import android.os.Bundle
+import android.os.Handler
+import androidx.appcompat.app.AppCompatActivity
+import com.Hello.re_grud.AppVedio
+import com.Hello.re_grud.Login.Login
+import com.Hello.re_grud.MainActivity_2
+import com.Hello.re_grud.R
+
+class AppIntro : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?)
+    { super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_intro)
+        var handler = Handler()
+        handler.postDelayed( {
+            var intent = Intent( this, AppVedio::class.java)
+            startActivity(intent)
+        }, 1400) }
+    override fun onPause() {
+        super.onPause()
+        finish()
+    } }
